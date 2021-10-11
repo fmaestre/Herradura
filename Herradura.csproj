@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{90E87A6A-695D-4D47-BBA2-E866D7B87987}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Herradura</RootNamespace>
+    <AssemblyName>Herradura</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>herradura.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 9.0\Visual Studio Tools for Office\PIA\Office11\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\ER\packages\Newtonsoft.Json.4.5.11\lib\net35\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseClasses\BaseClass.cs" />
+    <Compile Include="BaseClasses\BaseComponentClass.cs" />
+    <Compile Include="BaseClasses\vwUsersComp.cs" />
+    <Compile Include="BaseClasses\UserComp_.cs" />
+    <Compile Include="BaseClasses\UserComp.cs" />
+    <Compile Include="BaseClasses\vwRolePermissionsComp.cs" />
+    <Compile Include="BaseClasses\RegexUtilities.cs" />
+    <Compile Include="BaseClasses\RoleHistoryComp.cs" />
+    <Compile Include="BaseClasses\ConfigSys.cs" />
+    <Compile Include="BaseClasses\ExcelComp.cs" />
+    <Compile Include="BaseClasses\CustomError.cs" />
+    <Compile Include="BaseClasses\DataAccess.cs" />
+    <Compile Include="BaseClasses\enmCustomError.cs" />
+    <Compile Include="BaseClasses\enmDataTypes.cs" />
+    <Compile Include="BaseClasses\enmScreenBehaviour.cs" />
+    <Compile Include="BaseClasses\EntityComp.cs" />
+    <Compile Include="BaseClasses\EntityItemComp.cs" />
+    <Compile Include="BaseClasses\ExceptionMessages.cs" />
+    <Compile Include="BaseClasses\ExtensionMethods.cs" />
+    <Compile Include="BaseClasses\FieldAttribute.cs" />
+    <Compile Include="BaseClasses\FileComp.cs" />
+    <Compile Include="BaseClasses\MailComp.cs" />
+    <Compile Include="BaseClasses\Globals.cs" />
+    <Compile Include="BaseClasses\handler.cs" />
+    <Compile Include="BaseClasses\ICatalog.cs" />
+    <Compile Include="BaseClasses\Inf_Schema.cs" />
+    <Compile Include="BaseClasses\ModifyRegistry.cs" />
+    <Compile Include="BaseClasses\Printer.cs" />
+    <Compile Include="BaseClasses\RetChar.cs" />
+    <Compile Include="BaseClasses\role_permissions_comp.cs" />
+    <Compile Include="BaseClasses\SysFileComp.cs" />
+    <Compile Include="BaseClasses\SysLogComp.cs" />
+    <Compile Include="BaseClasses\SysParameterComp.cs" />
+    <Compile Include="BaseClasses\TableAttribute.cs" />
+    <Compile Include="BaseClasses\Timer.cs" />
+    <Compile Include="BaseClasses\UserSys.cs" />
+    <Compile Include="BaseClasses\Utils.cs" />
+    <Compile Include="BL\Files.cs" />
+    <Compile Include="BL\GenericBL.cs" />
+    <Compile Include="BL\http_handler.cs" />
+    <Compile Include="BL\http_module.cs" />
+    <Compile Include="BL\MailBL.cs" />
+    <Compile Include="BL\UploadFileBL.cs" />
+    <Compile Include="DAL\GenericDALSQLProvider.cs" />
+    <Compile Include="DAL\PortalCore.cs" />
+    <Compile Include="mail.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="herradura.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel1">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="_____RolePermission SCRIPT ________.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
